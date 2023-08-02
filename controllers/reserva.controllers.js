@@ -6,31 +6,33 @@ const ctrl = {};
 // ==========================================
 
 // Obtener todas las reservas
-ctrl.
+ctrl.renderListaReservas = (req, res) => {
+    res.render('listado-reserva')
+}
 // Formulario para crear una reserva
-ctrl.
+ctrl.renderNuevaReserva
 
 // Formulario para editar una reserva
-ctrl.
+ctrl.renderEditarReserva,
 
 // ==========================================
 //     Controladores para CRUD de reservas
 // ==========================================
 
 // Obtener todas las reservas
-ctrl.
+ctrl.obtenerReservas
 
 // Obtener una reserva
-ctrl.
+ctrl.obtenerUnaReservas
 
 // Crear una reserva
-ctrl.
+ctrl.crearUnaReserva
 
 // Actualizar una reserva
-ctrl.
+ctrl.actualizarReserva
 
 // Eliminar una reserva de forma lógica
-ctrl.
+ctrl.eliminarUnaReserva
 
 
 module.exports = ctrl;
