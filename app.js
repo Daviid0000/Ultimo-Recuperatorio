@@ -2,11 +2,11 @@
 const cors = require('cors');
 const express = require('express');
 const path = require('path');
-const { env } = require('process');
 const router = require('./routes/reserva.routes');
 const helmet = require('helmet');
 const morgan = require('morgan');
-
+const sequelize = require('sequelize')
+require('dotenv').config()
 
 const { conectarDB } = require('./database');
 
@@ -39,4 +39,4 @@ app.use((req, res, next) => {
 })
 
 // Starting the server
-app.listen(3000, () => console.log('Server on port', 3000));
+app.listen(3000, () => console.log('Server on port', port));
