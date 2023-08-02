@@ -25,10 +25,6 @@ const Reserva = sequelize.define('Reserva', {
         type: DataTypes.STRING(100),
         allowNull: false
     },
-    cantidad_personas: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     precio: {
         type: DataTypes.STRING(100),
         allowNull: false
@@ -51,7 +47,7 @@ const Reserva = sequelize.define('Reserva', {
     createdAt: true,
     updatedAt: true,
     deletedAt: true,
-    tableName: 'reservas'
+    tableName: 'reservadb'
 });
 
 // Crear tabla si no existe ({force: true} borra y crea la tabla)

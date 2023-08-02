@@ -26,6 +26,10 @@ app.set('view engine', 'ejs');
 // Routes
 app.use(require('./routes/reserva.routes'));
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
+app.use((req, res, next) => {
+    return res.status(404).render('404');
+
+})
 
 // Starting the server
 app.listen(3000, () => console.log('Server on port', 3000));
