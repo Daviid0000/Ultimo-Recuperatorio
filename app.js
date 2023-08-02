@@ -8,8 +8,13 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 
 
+const { conectarDB } = require('./database');
+
+conectarDB()
+
 
 const app = express();
+const port = process.env.PORT || 4000
 app.use(router)
 
 // Middlewares
@@ -25,6 +30,8 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use(require('./routes/reserva.routes'));
+
+
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 app.use((req, res, next) => {
     return res.status(404).render('404');
