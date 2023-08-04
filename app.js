@@ -3,9 +3,9 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const router = require('./routes/reserva.routes');
+const ctrl = require('../Ultimo-Recuperatorio/controllers/reserva.controllers.js')
 const helmet = require('helmet');
 const morgan = require('morgan');
-const sequelize = require('sequelize')
 require('dotenv').config()
 
 const { conectarDB } = require('./database');
@@ -15,7 +15,7 @@ conectarDB()
 
 const app = express();
 const port = process.env.PORT || 4000
-app.use(router)
+
 
 // Middlewares
 // TODO: Implementar middlewares
@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use(require('./routes/reserva.routes'));
-
+app.use(router)
 
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 app.use((req, res, next) => {

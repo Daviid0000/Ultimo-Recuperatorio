@@ -1,5 +1,5 @@
 // TODO: Crear controladores para cada una de las rutas de reserva.
-const Reserva = require('../models/Reserva');
+const Reserva = require('../models/Reserva.js');
 const ctrl = {};
 
 // ==========================================
@@ -7,12 +7,19 @@ const ctrl = {};
 // ==========================================
 
 // Obtener todas las reservas
-ctrl.renderListaReservas 
+ctrl.renderListaReservas = (req, res) => {
+    res.render('listado-reserva')
+}
 // Formulario para crear una reserva
-ctrl.renderNuevaReserva
+ctrl.renderNuevaReserva = (req, res) => {
+    res.render('nueva-reserva');
+}
 
 // Formulario para editar una reserva
-ctrl.renderEditarReserva,
+ctrl.renderEditarReserva = (req, res) => {
+    const { id } = req.params;
+    res.render('editar-reserva', { id })
+}
 
 // ==========================================
 //     Controladores para CRUD de reservas

@@ -3,7 +3,6 @@
 const { DataTypes, sequelize } = require('../database');
 
 const Reserva = sequelize.define('Reserva', {
-    // Model attributes are defined here
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

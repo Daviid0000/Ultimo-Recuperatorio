@@ -12,7 +12,7 @@ const {
     crearUnaReserva,
     actualizarReserva,
     eliminarUnaReserva
-} = require('../controllers/reserva.controllers');
+} = require('../controllers/reserva.controllers.js');
 
 // ==========================================
 //         Rutas para renderizar vistas
