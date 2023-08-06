@@ -8,17 +8,17 @@ const ctrl = {};
 
 // Obtener todas las reservas
 ctrl.renderListaReservas = (req, res) => {
-    res.render('listado-reserva')
+    res.render('index.ejs')
 }
 // Formulario para crear una reserva
 ctrl.renderNuevaReserva = (req, res) => {
-    res.render('nueva-reserva');
+    res.render('nuevo.ejs');
 }
 
 // Formulario para editar una reserva
 ctrl.renderEditarReserva = (req, res) => {
     const { id } = req.params;
-    res.render('editar-reserva', { id })
+    res.render('editar.ejs', { id })
 }
 
 // ==========================================
@@ -48,7 +48,7 @@ ctrl.obtenerUnaReserva = async (req, res) => {
     try {
         const { id } = req.params;
         const reserva = await Reserva.findOne({
-            whare: {
+            where: {
                 estado: true,
                 id
             }

@@ -6,12 +6,9 @@ const reservaId = formReserva.dataset.id;
 
 const nombre = document.querySelector('#nombre')
 const apellido = document.querySelector('#apellido')
-const fecha_ingreso = document.querySelector('#fechaingreso')
-const fecha_salida = document.querySelector('#fechasalida')
-const habitacion = document.querySelector('#habitacion')
-const cantidad_personas = document.querySelector('#cantidad_personas')
-const telefono = document.querySelector('#telefono')
-const email = document.querySelector('#email')
+const fechaTiket = document.querySelector('#fechaTiket')
+const pelicula = document.querySelector('#pelicula')
+const precio = document.querySelector('#precio')
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -22,13 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Mostrar en el formulario los datos de la reserva que se quiere actualizar
     nombre.value = data.nombre;
     apellido.value = data.apellido;
-    fecha_ingreso.value = data.fecha_ingreso;
-    fecha_ingreso.value = dayjs(data.fecha_ingreso).format('DD-MM-YYYY HH:mm');
-    fecha_salida.value = dayjs(data.fecha_salida).format('DD-MM-YYYY HH:mm');
-    habitacion.value = data.habitacion;
-    cantidad_personas.value = data.cantidad_personas;
-    telefono.value = data.telefono;
-    email.value = data.email;
+    fechaTiket.value = data.fechaTiket;
+    pelicula.value = dayjs(data.pelicula).format('DD-MM-YYYY HH:mm');
+    precio.value = data.precio;
 });
 
 
@@ -38,12 +31,9 @@ formReserva.addEventListener('submit', async (e) => {
     reservaActualizada = {
         nombre: nombre.value,
         apellido: apellido.value,
-        fecha_ingreso: fecha_ingreso.value,
-        fecha_salida: fecha_salida.value,
-        habitacion: habitacion.value,
-        cantidad_personas: cantidad_personas.value,
-        telefono: telefono.value,
-        email: email.value,
+        fechaTiket: fechaTiket.value,
+        pelicula: pelicula.value,
+        precio: precio.value,
     }
 
 

@@ -1,6 +1,6 @@
 const obtenerDatos = async () => {
     // Pedir las reservas al servidor
-    const data = await fetch('http://localhost:4000/api', {
+    const data = await fetch('http://localhost:3000/api', {
         method: 'GET'
     });
     const reservas = await data.json();
@@ -16,12 +16,9 @@ const mostrarReservas = (reservas, tablaElement) => {
                 <td>${reserva.codigo}</td>
                 <td>${reserva.nombre}</td>
                 <td>${reserva.apellido}</td>
-                <td>${dayjs(reserva.fecha_ingreso).format('DD-MM-YYYY HH:mm')}</td>
-                <td>${dayjs(reserva.fecha_salida).format('DD-MM-YYYY HH:mm')}</td>
-                <td>${reserva.habitacion}</td>
-                <td>${reserva.cantidad_personas}</td>
-                <td>${reserva.telefono}</td>
-                <td>${reserva.email}</td>
+                <td>${dayjs(reserva.fechaTiket).format('DD-MM-YYYY HH:mm')}</td>
+                <td>${reserva.pelicula}</td>
+                <td>${reserva.precio}</td>
                 <td class="gap-1">               
                     <a href="/actualizar-reserva/${reserva.id}" class="btn btn-sm btn-warning fa-regular fa-pen-to-square">
                         
